@@ -9,7 +9,10 @@
   "author": "tanayagar",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "discord.js": "^12.2.0",
-    "ms": "^2.1.2"
+    "fs": "0.0.1-security",
+    "ms": "^2.1.2",
+    "xmlhttprequest": "^1.8.0"
   }
 }
