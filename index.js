@@ -103,6 +103,7 @@ client.on('message',message=>{
                             }).catch(function(error){
                                 console.log(error);
                                 });
+                fs.writeFileSync('vrb.txt','1');
                 setInterval(function(){
                     console.log("Hurrah");
                         
