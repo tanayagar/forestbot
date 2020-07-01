@@ -106,7 +106,7 @@ client.on('message',message=>{
                                 });
                         
                         fs.writeFileSync('vrb.txt','1');
-                },ms('1m'));
+                },ms('1.5 hrs'));
             }
             if(lock=='1'){
                 console.log("Instance running");
