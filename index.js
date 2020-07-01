@@ -2,11 +2,8 @@ const Discord = require('discord.js');
 const axios = require('axios');
 const fs = require('fs');
 const ms = require('ms');
-const { callbackify } = require('util');
-const bot = new Discord.Client();
+const client = new Discord.Client();
 
-
-const token ='NzI2NzAzMjM4NzU3MjIwNDMz.XviarA.w9DgsjN6w9gehcTKrnZQJd-o5RI';
 
 const PREFIX = '!';
 
@@ -132,4 +129,4 @@ bot.on('message',message=>{
 }
 }
 });
-bot.login(token);
+client.login(process.env.BOT_TOKEN);
