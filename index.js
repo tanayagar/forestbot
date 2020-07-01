@@ -32,6 +32,7 @@ client.on('message',message=>{
                 var end=25;
                 var tree='Wisteria'
                 message.channel.send("Starting Default");
+                console.log("Default Case Requested");
                 const embed = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
                 .addField('Room Owner', message.author.username,)
@@ -47,14 +48,16 @@ client.on('message',message=>{
 
                 var d = new Date();
                 setTimeout(function(){
+                    console.log("New Default Session Start");
                     var d = new Date();
                     message.channel.send(message.author.username+"'s Forest Session has Started at "+d.toLocaleTimeString());
-                },ms(5+'m'));
+                },ms(st+'m'));
 
                 //setTimeout(function())
                 endAt= +end + +st;
 
                 setTimeout(function(){
+                    console.log("New custom Session End");
                     var d = new Date();
                     message.channel.send(`<@&726748170545004576>`+ message.author.username+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
@@ -72,18 +75,21 @@ client.on('message',message=>{
                 .setThumbnail("https://forestapp.cc/img/icon.png");
                 message.channel.send(embed2);
                 message.channel.send(`<@&726748170545004576> A new tree was planted. Join Now!!`);
+                console.log("Custom Case Requested");
     
     
                 var d = new Date();
                 setTimeout(function(){
+                    console.log("New custom case started");
                     var d = new Date();
                     message.channel.send(message.author.username+"'s Forest Session has Started at "+d.toLocaleTimeString());
                 },ms(args[3]+'m'));
     
                 //setTimeout(function())
-                endAt= +args[2] + +args[2];
+                endAt= +args[2] + +args[3];
     
                 setTimeout(function(){
+                    console.log("New custom case ended");
                     var d = new Date();
                     message.channel.send(`<@&726748170545004576>`+ message.author.username+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
