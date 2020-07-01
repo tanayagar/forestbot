@@ -8,7 +8,7 @@ const client = new Discord.Client();
 const PREFIX = '!';
 
 
-bot.on('message',message=>{
+client.on('message',message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
 
     if(message.content[0]==='!'){
