@@ -94,6 +94,15 @@ client.on('message',message=>{
                 //message.channel.send("LOCK Value "+lock);
             console.log(lock);
             if(lock==='0'){
+                console.log("Hurrah");
+                        
+                        axios.get('https://api.giphy.com/v1/gifs/random?api_key=PjerkTLvieA1ETHxtACEL9IEYvgigXff&tag=drinking water&rating=G')
+                            .then(function(response){
+                            console.log(response.data.data.image_original_url);
+                            message.channel.send(response.data.data.image_original_url);
+                            }).catch(function(error){
+                                console.log(error);
+                                });
                 setInterval(function(){
                     console.log("Hurrah");
                         
@@ -110,6 +119,7 @@ client.on('message',message=>{
             }
             if(lock=='1'){
                 console.log("Instance running");
+                message.channel.send("Woah! Don't drink too much. One Instance of the reminder service is already running");
             }
             
             break;
@@ -120,6 +130,9 @@ client.on('message',message=>{
                     console.log('Found Bot running');
                     fs.writeFileSync('vrb.txt','0');
                     message.channel.send('Water reminder deactivated');
+                }
+                else{
+                    message.channel.send("You can't kill something that is dead on the inside. Reminder not set up.");
                 }
             break;
 
