@@ -46,14 +46,16 @@ bot.on('message',message=>{
 
                 var d = new Date();
                 setTimeout(function(){
+                    console.log("New Default Session Start");
                     var d = new Date();
                     message.channel.send(message.author.username+"'s Forest Session has Started at "+d.toLocaleTimeString());
-                },ms(5+'m'));
+                },ms(st+'m'));
 
                 //setTimeout(function())
                 endAt= +end + +st;
 
                 setTimeout(function(){
+                    console.log("New Default Session End");
                     var d = new Date();
                     message.channel.send(`<@&726748170545004576>`+ message.author.username+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
@@ -75,14 +77,16 @@ bot.on('message',message=>{
             
                         var d = new Date();
                         setTimeout(function(){
+                            console.log("New custom Session Start");
                             var d = new Date();
                             message.channel.send(message.author.username+"'s Forest Session has Started at "+d.toLocaleTimeString());
                         },ms(args[3]+'m'));
             
                         //setTimeout(function())
-                        endAt= +args[2] + +args[2];
+                        endAt= +args[2] + +args[3];
             
                         setTimeout(function(){
+                            console.log("New Custom Session End");
                             var d = new Date();
                             message.channel.send(`<@&726748170545004576>`+ message.author.username+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                         },ms(endAt+'m'));
