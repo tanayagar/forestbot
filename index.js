@@ -98,7 +98,7 @@ client.on('message',message=>{
             case 'water':
             //var lock = fs.readFileSync('./vrb.txt',"utf8");
                 //message.channel.send("LOCK Value "+lock);
-            console.log(lock);
+            //console.log(lock);
             if(process.env.LOCK_VAL=='0'){
                 console.log("Hurrah primary");
                         
@@ -124,7 +124,7 @@ client.on('message',message=>{
                         
                         //fs.writeFileSync('vrb.txt','1');
                         process.env.LOCK_VAL='1'
-                },ms('1.5 hrs'));
+                },ms('1m'));
             }
             if(process.env.LOCK_VAL=='1'){
                 console.log("One Instance running");
@@ -146,18 +146,10 @@ client.on('message',message=>{
                 }
             break;
 
-            case 'lockone':
-                console.log("Lock One orig:"+ process.env.LOCK_VAL);
-                process.env.LOCK_VAL=0
-                console.log("Lock One update:"+ process.env.LOCK_VAL);
+            case 'lockval':
+                console.log("Current Value:"+process.env.LOCK_VAL);
                 break;
             
-            case 'lockzero':
-                console.log("Lock zero orig:"+ process.env.LOCK_VAL);
-                process.env.LOCK_VAL=1
-                console.log("Lock zero update:"+ process.env.LOCK_VAL);
-                break;
-
         default:
             message.channel.send("Hey buddy, if you want some help, ask for it. \n `!forest help`");
     }
