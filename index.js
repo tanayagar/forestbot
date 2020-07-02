@@ -96,11 +96,11 @@ client.on('message',message=>{
                 break;
             
             case 'water':
-            var lock = fs.readFileSync('./vrb.txt',"utf8");
+            //var lock = fs.readFileSync('./vrb.txt',"utf8");
                 //message.channel.send("LOCK Value "+lock);
             console.log(lock);
-            if(lock==='0'){
-                console.log("Hurrah");
+            if(process.env.LOCK_VAL=='0'){
+                console.log("Hurrah primary");
                         
                         axios.get('https://api.giphy.com/v1/gifs/random?api_key=PjerkTLvieA1ETHxtACEL9IEYvgigXff&tag=drinking water&rating=G')
                             .then(function(response){
@@ -109,7 +109,8 @@ client.on('message',message=>{
                             }).catch(function(error){
                                 console.log(error);
                                 });
-                fs.writeFileSync('vrb.txt','1');
+                //fs.writeFileSync('vrb.txt','1');
+                process.env.LOCK_VAL='1';
                 setInterval(function(){
                     console.log("Hurrah");
                         
@@ -121,11 +122,12 @@ client.on('message',message=>{
                                 console.log(error);
                                 });
                         
-                        fs.writeFileSync('vrb.txt','1');
+                        //fs.writeFileSync('vrb.txt','1');
+                        process.env.LOCK_VAL='1'
                 },ms('1.5 hrs'));
             }
-            if(lock=='1'){
-                console.log("Instance running");
+            if(process.env.LOCK_VAL=='1'){
+                console.log("One Instance running");
                 message.channel.send("Woah! Don't drink too much. One Instance of the reminder service is already running");
             }
             
@@ -133,9 +135,10 @@ client.on('message',message=>{
 
             case 'water-off':
                 var lock = fs.readFileSync('./vrb.txt',"utf8");
-                if(lock=='1'){
-                    console.log('Found Bot running');
-                    fs.writeFileSync('vrb.txt','0');
+                if(process.env.LOCK_VAL=='1'){
+                    console.log('Found Bot running will stop');
+                    //fs.writeFileSync('vrb.txt','0');
+                    process.env.LOCK_VAL='0'
                     message.channel.send('Water reminder deactivated');
                 }
                 else{
