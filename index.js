@@ -128,10 +128,11 @@ client.on('message',message=>{
                                 });
                         
                         //fs.writeFileSync('vrb.txt','1');
-                        process.env.LOCK_VAL='1'
+                        //process.env.LOCK_VAL='1'
                 },ms('1m'));
+                process.env.LOCK_VAL='0';
             }
-            
+
             if(process.env.LOCK_VAL=='1'){
                 console.log("One Instance running");
                 message.channel.send("Woah! Don't drink too much. One Instance of the reminder service is already running");
