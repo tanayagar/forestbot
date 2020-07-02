@@ -91,7 +91,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom case ended");
                     var d = new Date();
-                    message.channel.send(`<@&726748170545004576>`+ message.author.username+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.channel.send(`<@&726748170545004576> `+ message.author.username+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
             
@@ -142,6 +142,18 @@ client.on('message',message=>{
                     message.channel.send("You can't kill something that is dead on the inside. Reminder not set up.");
                 }
             break;
+
+            case 'lockone':
+                console.log("Lock One orig:"+ process.env.LOCK_VAL);
+                process.env.LOCK_VAL=0
+                console.log("Lock One update:"+ process.env.LOCK_VAL);
+                break;
+            
+            case 'lockzero':
+                console.log("Lock zero orig:"+ process.env.LOCK_VAL);
+                process.env.LOCK_VAL=1
+                console.log("Lock zero update:"+ process.env.LOCK_VAL);
+                break;
 
         default:
             message.channel.send("Hey buddy, if you want some help, ask for it. \n `!forest help`");
