@@ -102,7 +102,7 @@ client.on('message',message=>{
             //console.log(lock);
             if(process.env.LOCK_VAL=='0'){
                 console.log("Hurrah primary");
-                        
+                console.log("Value inside primart"+process.env.LOCK_VAL);
                         axios.get('https://api.giphy.com/v1/gifs/random?api_key=PjerkTLvieA1ETHxtACEL9IEYvgigXff&tag=drinking water&rating=G')
                             .then(function(response){
                             console.log(response.data.data.image_original_url);
@@ -118,7 +118,7 @@ client.on('message',message=>{
                         clearInterval(ref);
                     }
                     console.log("Hurrah");
-                        
+                    console.log("Value inside sec"+process.env.LOCK_VAL);    
                         axios.get('https://api.giphy.com/v1/gifs/random?api_key=PjerkTLvieA1ETHxtACEL9IEYvgigXff&tag=drinking water&rating=G')
                             .then(function(response){
                             console.log(response.data.data.image_original_url);
@@ -130,7 +130,8 @@ client.on('message',message=>{
                         //fs.writeFileSync('vrb.txt','1');
                         //process.env.LOCK_VAL='1'
                 },ms('1m'));
-                process.env.LOCK_VAL='0';
+                console.log("Value outside main loop"+process.env.LOCK_VAL);
+                //process.env.LOCK_VAL='0';
             }
 
             if(process.env.LOCK_VAL=='1'){
