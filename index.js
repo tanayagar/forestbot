@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const axios = require('axios');
 const fs = require('fs');
 const ms = require('ms');
+const { clearInterval } = require('timers');
 const client = new Discord.Client();
 
 
@@ -111,7 +112,11 @@ client.on('message',message=>{
                                 });
                 //fs.writeFileSync('vrb.txt','1');
                 process.env.LOCK_VAL='1';
-                setInterval(function(){
+                var ref = setInterval(function(){
+                    if(process.env.LOCK_VAL=='0'){
+                        console.log("Cleared");
+                        clearInterval(ref);
+                    }
                     console.log("Hurrah");
                         
                         axios.get('https://api.giphy.com/v1/gifs/random?api_key=PjerkTLvieA1ETHxtACEL9IEYvgigXff&tag=drinking water&rating=G')
@@ -126,6 +131,7 @@ client.on('message',message=>{
                         process.env.LOCK_VAL='1'
                 },ms('1m'));
             }
+            
             if(process.env.LOCK_VAL=='1'){
                 console.log("One Instance running");
                 message.channel.send("Woah! Don't drink too much. One Instance of the reminder service is already running");
