@@ -81,7 +81,7 @@ client.on('message',message=>{
             case 'new':
                 const embed2 = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
-                .setAuthor(message.author.displayAvatarURL())
+                .setAuthor(message.author.AvatarURL())
                 .addField('Room Owner', message.author.username)
                 .setColor(0xF1C40F)
                 .addField('Tree Type',args[5])
