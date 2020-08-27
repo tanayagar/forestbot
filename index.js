@@ -47,7 +47,6 @@ client.on('message',message=>{
                 const embed = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
                 .setAuthor(message.author.username,message.author.displayAvatarURL())
-                .addField('Room Owner',message.author.username)
                 .setColor(0xF1C40F)
                 .addField('Tree Type',tree)
                 .addField('Duration',end+' mins',true)
@@ -81,8 +80,7 @@ client.on('message',message=>{
             case 'new':
                 const embed2 = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
-                .setAuthor(message.author.username,message.author.avatarURL)
-                .addField('Room Owner', message.author.username)
+                .setAuthor(message.author.username,message.author.displayAvatarURL())
                 .setColor(0xF1C40F)
                 .addField('Tree Type',args[5])
                 .addField('Duration',args[2]+' mins',true)
