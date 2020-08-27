@@ -65,7 +65,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New Default Session Start");
                     var d = new Date();
-                    message.channel.send(`<@&`+ping_25+`>`+`<@`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
+                    message.channel.send(`<@&`+ping_25+`>`+` <@`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
                 },ms(st+'m'));
 
                 //setTimeout(function())
@@ -74,14 +74,14 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom Session End");
                     var d = new Date();
-                    message.reply(`<@&`+ping_25+`>`+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.reply(`<@&`+ping_25+`>`+ ` <@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
 
             case 'new':
                 const embed2 = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
-                .setAuthor(message.author.avatar)
+                .setAuthor(message.author.displayAvatarURL())
                 .addField('Room Owner', message.author.username)
                 .setColor(0xF1C40F)
                 .addField('Tree Type',args[5])
@@ -108,7 +108,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom case started");
                     var d = new Date();
-                    message.channel.send(`<@&`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
+                    message.channel.send(`<@`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
                 },ms(args[3]+'m'));
     
                 //setTimeout(function())
@@ -117,7 +117,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom case ended");
                     var d = new Date();
-                    message.channel.send(`<@&`+pings+`>`+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.channel.send(`<@&`+pings+`>`+ ` <@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
             
