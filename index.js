@@ -26,6 +26,15 @@ client.on('message',message=>{
                         \n `!forest default rcode` \
                         \n \n  Create default session for 25 minutes that starts in 5 minutes"
                         );
+            const embed = new Discord.MessageEmbed().setColor('Green').setTitle("Forest Bot Help")
+            .addField('Usage',`!forest dur tts rcode tree`)
+            .addField('dur',`duration (mins)`)
+            .addField(`tts` , `Time to start (mins)`)
+            .addField(`rcode` , `Room_Code`)
+            .addField(`tree` ,`Tree_Type`)
+            .addField('Default Usage','!forest default rcode').setColor('Blue')
+            .addField('Create default session for 25 minutes that starts in 5 minutes');
+            message.channel.send(embed);
             break;
         
             case 'default':
