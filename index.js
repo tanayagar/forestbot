@@ -46,7 +46,7 @@ client.on('message',message=>{
                 console.log("Default Case Requested");
                 const embed = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
-                .setAuthor("Room Owner",message.author.avatarURL)
+                .setAuthor(message.author.avatarURL)
                 .addField('Room Owner',message.author.username)
                 .setColor(0xF1C40F)
                 .addField('Tree Type',tree)
@@ -78,7 +78,7 @@ client.on('message',message=>{
             case 'new':
                 const embed2 = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
-                .setAuthor("Room Owner",message.author.avatarURL)
+                .setAuthor(message.author.avatarURL)
                 .addField('Room Owner', message.author.username)
                 .setColor(0xF1C40F)
                 .addField('Tree Type',args[5])
