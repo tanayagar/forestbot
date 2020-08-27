@@ -58,14 +58,14 @@ client.on('message',message=>{
 
 
                 ping_25=`748495378265014322`;
-                message.channel.send(`<@`+ping_25+`>`+` A new tree was planted. Join Now!!`);
+                message.channel.send(`<@&`+ping_25+`>`+` A new tree was planted. Join Now!!`);
 
 
                 var d = new Date();
                 setTimeout(function(){
                     console.log("New Default Session Start");
                     var d = new Date();
-                    message.channel.send(`<@`+ping_25+`>`+`<@`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
+                    message.channel.send(`<@&`+ping_25+`>`+`<@`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
                 },ms(st+'m'));
 
                 //setTimeout(function())
@@ -74,7 +74,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom Session End");
                     var d = new Date();
-                    message.reply(`<@`+ping_25+`>`+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.reply(`<@&`+ping_25+`>`+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
 
@@ -100,7 +100,7 @@ client.on('message',message=>{
                 else{
                     pings=`748495494535315557`;
                 }
-                message.channel.send(`<@`+pings+`>`+` A new tree was planted. Join Now!!`);
+                message.channel.send(`<@&`+pings+`>`+` A new tree was planted. Join Now!!`);
                 console.log("Custom Case Requested");
     
     
@@ -108,7 +108,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom case started");
                     var d = new Date();
-                    message.channel.send(`<@`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
+                    message.channel.send(`<@&`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
                 },ms(args[3]+'m'));
     
                 //setTimeout(function())
@@ -117,7 +117,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom case ended");
                     var d = new Date();
-                    message.channel.send(`<@`+pings+`>`+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.channel.send(`<@&`+pings+`>`+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
             
