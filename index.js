@@ -96,67 +96,67 @@ client.on('message',message=>{
                 },ms(endAt+'m'));
                 break;
             
-            case 'water':
-            //var lock = fs.readFileSync('./vrb.txt',"utf8");
-                //message.channel.send("LOCK Value "+lock);
-            //console.log(lock);
-            if(process.env.LOCK_VAL=='0'){
-                console.log("Hurrah primary");
-                console.log("Value inside primart"+process.env.LOCK_VAL);
-                        axios.get('https://api.giphy.com/v1/gifs/random?api_key=PjerkTLvieA1ETHxtACEL9IEYvgigXff&tag=drinking water&rating=G')
-                            .then(function(response){
-                            console.log(response.data.data.image_original_url);
-                            message.channel.send(response.data.data.image_original_url);
-                            }).catch(function(error){
-                                console.log(error);
-                                });
-                //fs.writeFileSync('vrb.txt','1');
-                process.env.LOCK_VAL='1';
-                var ref = setInterval(function(){
-                    if(process.env.LOCK_VAL=='0'){
-                        console.log("Cleared");
-                        clearInterval(ref);
-                    }
-                    console.log("Hurrah");
-                    console.log("Value inside sec"+process.env.LOCK_VAL);    
-                        axios.get('https://api.giphy.com/v1/gifs/random?api_key=PjerkTLvieA1ETHxtACEL9IEYvgigXff&tag=drinking water&rating=G')
-                            .then(function(response){
-                            console.log(response.data.data.image_original_url);
-                            message.channel.send(response.data.data.image_original_url);
-                            }).catch(function(error){
-                                console.log(error);
-                                });
+            // case 'water':
+            // //var lock = fs.readFileSync('./vrb.txt',"utf8");
+            //     //message.channel.send("LOCK Value "+lock);
+            // //console.log(lock);
+            // if(process.env.LOCK_VAL=='0'){
+            //     console.log("Hurrah primary");
+            //     console.log("Value inside primart"+process.env.LOCK_VAL);
+            //             axios.get('https://api.giphy.com/v1/gifs/random?api_key=PjerkTLvieA1ETHxtACEL9IEYvgigXff&tag=drinking water&rating=G')
+            //                 .then(function(response){
+            //                 console.log(response.data.data.image_original_url);
+            //                 message.channel.send(response.data.data.image_original_url);
+            //                 }).catch(function(error){
+            //                     console.log(error);
+            //                     });
+            //     //fs.writeFileSync('vrb.txt','1');
+            //     process.env.LOCK_VAL='1';
+            //     var ref = setInterval(function(){
+            //         if(process.env.LOCK_VAL=='0'){
+            //             console.log("Cleared");
+            //             clearInterval(ref);
+            //         }
+            //         console.log("Hurrah");
+            //         console.log("Value inside sec"+process.env.LOCK_VAL);    
+            //             axios.get('https://api.giphy.com/v1/gifs/random?api_key=PjerkTLvieA1ETHxtACEL9IEYvgigXff&tag=drinking water&rating=G')
+            //                 .then(function(response){
+            //                 console.log(response.data.data.image_original_url);
+            //                 message.channel.send(response.data.data.image_original_url);
+            //                 }).catch(function(error){
+            //                     console.log(error);
+            //                     });
                         
-                        //fs.writeFileSync('vrb.txt','1');
-                        //process.env.LOCK_VAL='1'
-                },ms('10m'));
-                console.log("Value outside main loop"+process.env.LOCK_VAL);
-                //process.env.LOCK_VAL='0';
-            }
+            //             //fs.writeFileSync('vrb.txt','1');
+            //             //process.env.LOCK_VAL='1'
+            //     },ms('10m'));
+            //     console.log("Value outside main loop"+process.env.LOCK_VAL);
+            //     //process.env.LOCK_VAL='0';
+            // }
 
-            else if(process.env.LOCK_VAL=='1'){
-                console.log("One Instance running");
-                message.channel.send("Woah! Don't drink too much. One Instance of the reminder service is already running");
-            }
+            // else if(process.env.LOCK_VAL=='1'){
+            //     console.log("One Instance running");
+            //     message.channel.send("Woah! Don't drink too much. One Instance of the reminder service is already running");
+            // }
             
-            break;
+            // break;
 
-            case 'water-off':
-                var lock = fs.readFileSync('./vrb.txt',"utf8");
-                if(process.env.LOCK_VAL=='1'){
-                    console.log('Found Bot running will stop');
-                    //fs.writeFileSync('vrb.txt','0');
-                    process.env.LOCK_VAL='0'
-                    message.channel.send('Water reminder deactivated');
-                }
-                else{
-                    message.channel.send("You can't kill something that is dead on the inside. Reminder not set up.");
-                }
-            break;
+            // case 'water-off':
+            //     var lock = fs.readFileSync('./vrb.txt',"utf8");
+            //     if(process.env.LOCK_VAL=='1'){
+            //         console.log('Found Bot running will stop');
+            //         //fs.writeFileSync('vrb.txt','0');
+            //         process.env.LOCK_VAL='0'
+            //         message.channel.send('Water reminder deactivated');
+            //     }
+            //     else{
+            //         message.channel.send("You can't kill something that is dead on the inside. Reminder not set up.");
+            //     }
+            // break;
 
-            case 'lockval':
-                console.log("Current Value:"+process.env.LOCK_VAL);
-                break;
+            // case 'lockval':
+            //     console.log("Current Value:"+process.env.LOCK_VAL);
+            //     break;
             
         default:
             message.channel.send("Hey buddy, if you want some help, ask for it. \n `!forest help`");
