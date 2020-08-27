@@ -46,7 +46,7 @@ client.on('message',message=>{
                 console.log("Default Case Requested");
                 const embed = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
-                .addField('Room Owner', message.author.username,)
+                .addField('Room Owner',message.author.username,).setImage(message.author.avatarURL)
                 .setColor(0xF1C40F)
                 .addField('Tree Type',tree)
                 .addField('Duration',end+' mins',true)
@@ -70,7 +70,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom Session End");
                     var d = new Date();
-                    message.channel.send(`<@&726748170545004576>`+ message.author.username+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.reply(`<@&726748170545004576>`+ message.author.username+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
 
