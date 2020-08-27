@@ -19,21 +19,22 @@ client.on('message',message=>{
     if(args[0]==='forest'){
     switch(args[1]){
         case 'help':
-            message.channel.send(
-                        "\n **USAGE** \n \n`!forest dur tts rcode tree` \n \n `dur` : `duration (mins)` \n `tts` : `Time to start (mins)` \
-                        \n `rcode` : `Room_Code` \n `tree` : `Tree_Type` \
-                        \n \n **Default Usage**\
-                        \n `!forest default rcode` \
-                        \n \n  Create default session for 25 minutes that starts in 5 minutes"
-                        );
-            const embed1 = new Discord.MessageEmbed().setColor('Green').setTitle("Forest Bot Help")
+            // message.channel.send(
+            //             "\n **USAGE** \n \n`!forest dur tts rcode tree` \n \n `dur` : `duration (mins)` \n `tts` : `Time to start (mins)` \
+            //             \n `rcode` : `Room_Code` \n `tree` : `Tree_Type` \
+            //             \n \n **Default Usage**\
+            //             \n `!forest default rcode` \
+            //             \n \n  Create default session for 25 minutes that starts in 5 minutes"
+            //             );
+            const embed1 = new Discord.MessageEmbed()
+            .setTitle("Forest Bot Help")
+            .setColor(0xF1C40F)
             .addField('Usage',`!forest dur tts rcode tree`)
             .addField('dur',`duration (mins)`)
             .addField(`tts` , `Time to start (mins)`)
             .addField(`rcode` , `Room_Code`)
             .addField(`tree` ,`Tree_Type`)
-            .addField('Default Usage','!forest default rcode').setColor('Blue')
-            .addField('Create default session for 25 minutes that starts in 5 minutes');
+            .addField('Default Usage','!forest default rcode \n Create default session for 25 minutes that starts in 5 minutes')
             message.channel.send(embed1);
             break;
         
