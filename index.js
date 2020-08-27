@@ -55,7 +55,10 @@ client.on('message',message=>{
                 .addField('Join URL',url+args[2])
                 .setThumbnail("https://forestapp.cc/img/icon.png");
                 message.channel.send(embed);
-                message.channel.send(`<@&726748170545004576> A new tree was planted. Join Now!!`);
+
+
+                ping_25=`<@748495378265014322>`;
+                message.channel.send(ping_25+` A new tree was planted. Join Now!!`);
 
 
                 var d = new Date();
@@ -71,7 +74,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom Session End");
                     var d = new Date();
-                    message.reply(`<@&726748170545004576>`+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.reply(ping_25+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
 
@@ -87,7 +90,17 @@ client.on('message',message=>{
                 .addField('Join URL',url+args[4])
                 .setThumbnail("https://forestapp.cc/img/icon.png");
                 message.channel.send(embed2);
-                message.channel.send(`<@&726748170545004576> A new tree was planted. Join Now!!`);
+
+                if(args[2]<50){
+                    pings=`<@&726748170545004576>`;
+                }
+                else if(args[2]<90){
+                    pings=`<@748495452978151425>`;
+                }
+                else{
+                    pings=`<@748495494535315557>`;
+                }
+                message.channel.send(pings+` A new tree was planted. Join Now!!`);
                 console.log("Custom Case Requested");
     
     
@@ -104,7 +117,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom case ended");
                     var d = new Date();
-                    message.channel.send(`<@&726748170545004576> `+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.channel.send(pings+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
             
