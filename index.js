@@ -46,7 +46,7 @@ client.on('message',message=>{
                 console.log("Default Case Requested");
                 const embed = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
-                .setAuthor(message.author.avatarURL)
+                .setAuthor(message.author.avatar)
                 .addField('Room Owner',message.author.username)
                 .setColor(0xF1C40F)
                 .addField('Tree Type',tree)
@@ -57,15 +57,15 @@ client.on('message',message=>{
                 message.channel.send(embed);
 
 
-                ping_25=`<@748495378265014322>`;
-                message.channel.send(ping_25+` A new tree was planted. Join Now!!`);
+                ping_25=`748495378265014322`;
+                message.channel.send(`<@`+ping_25+`>`+` A new tree was planted. Join Now!!`);
 
 
                 var d = new Date();
                 setTimeout(function(){
                     console.log("New Default Session Start");
                     var d = new Date();
-                    message.channel.send(`<@`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
+                    message.channel.send(`<@`+ping_25+`>`+`<@`+message.author.id+`>`+"'s Forest Session has Started at "+d.toLocaleTimeString());
                 },ms(st+'m'));
 
                 //setTimeout(function())
@@ -74,14 +74,14 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom Session End");
                     var d = new Date();
-                    message.reply(ping_25+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.reply(`<@`+ping_25+`>`+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
 
             case 'new':
                 const embed2 = new Discord.MessageEmbed()
                 .setTitle('New Forest Room')
-                .setAuthor(message.author.avatarURL)
+                .setAuthor(message.author.avatar)
                 .addField('Room Owner', message.author.username)
                 .setColor(0xF1C40F)
                 .addField('Tree Type',args[5])
@@ -92,15 +92,15 @@ client.on('message',message=>{
                 message.channel.send(embed2);
 
                 if(args[2]<50){
-                    pings=`<@&726748170545004576>`;
+                    pings=`748495378265014322`;
                 }
                 else if(args[2]<90){
-                    pings=`<@748495452978151425>`;
+                    pings=`748495452978151425`;
                 }
                 else{
-                    pings=`<@748495494535315557>`;
+                    pings=`748495494535315557`;
                 }
-                message.channel.send(pings+` A new tree was planted. Join Now!!`);
+                message.channel.send(`<@`+pings+`>`+` A new tree was planted. Join Now!!`);
                 console.log("Custom Case Requested");
     
     
@@ -117,7 +117,7 @@ client.on('message',message=>{
                 setTimeout(function(){
                     console.log("New custom case ended");
                     var d = new Date();
-                    message.channel.send(pings+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
+                    message.channel.send(`<@`+pings+`>`+ `<@`+message.author.id+`>`+`'s session has ended at `+ d.toLocaleTimeString() + `. Create a new one`);
                 },ms(endAt+'m'));
                 break;
             
